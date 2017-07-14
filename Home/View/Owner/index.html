@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Owner</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="<?php echo hcss_url;?>bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME STYLE  -->
+    <link href="<?php echo hcss_url;?>font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE  -->
+    <link href="<?php echo hcss_url;?>style_public.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse set-radius-zero" >
+        <div class="container">
+            <div class="navbar-header navbar-brand">
+                <a href="{:U('Home/Owner/index')}">
+                    <img src="<?php echo himg_url;?>logo.png" />  
+                </a> 
+            </div>
+            <div class="right-div">
+                <a href="{:U('Home/Index/logout')}" class="btn btn-danger pull-right">LOG OUT</a>
+            </div>
+        </div>
+    </div>
+    <!-- LOGO HEADER END-->
+    <section class="menu-section">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+                            <li><a href="{:U('Home/Owner/o_modify')}">Owner</a></li>
+                            <li>
+                                <a href="javascrrpt:void(0)" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Source<i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="{:U('Home/Source/s_show')}">source info </a>
+                                    </li> 
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="{:U('Home/Source/s_add')}">source add</a>
+                                     </li>
+                                </ul>
+                            </li>
+                            <li><a href="{:U('Home/Driver/d_select')}">Driver</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+         <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+            <p class="text-right">Welcome to wwt! 
+                <if condition="$data['name']!='' ">{$data['name']}<else/>{$data['tel']}</if> 
+            </p>
+                <h4 class="header-line">Welcome Page</h4>
+            </div>
+        </div>
+             <div class="row">
+             <div class="col-md-12">
+               <div class="alert alert-info text-center">
+                <!-- <font size="3">  Hello,{$data['name']}！</font><br/> -->
+                 <div class="table-responsive">
+                   <h3>个人信息</h3>
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <if condition="$data['name']!='' ">
+                        <tr class="odd gradeX">
+                             <td class="text-right">姓名</td>
+                             <td class="center">{$data['name']}</td>            
+                        </tr>
+                    </if>
+                    <tr class="even gradeC">
+                         <td class="text-right">身份证号</td>
+                         <td class="center">{$data['id']}</td>
+                    </tr> 
+                    <tr class="odd gradeX">
+                         <td class="text-right">手机号码</td>
+                         <td class="center">{$data['tel']}</td>
+                    </tr>   
+                    <if condition="$data['email']!='' ">
+                        <tr class="even gradeC">
+                             <td class="text-right">电子邮箱</td>
+                             <td class="center">{$data['email']}</td>            
+                        </tr>
+                    </if>
+                    <if condition="$data['place']!='' ">
+                        <tr class="odd gradeX">
+                             <td class="text-right">所在地</td>
+                             <td class="center">{$data['place']}</td>            
+                        </tr>
+                    </if>
+                    <if condition="$data['comp']!='' ">
+                        <tr class="even gradeC">
+                             <td class="text-right">所在公司名</td>
+                             <td class="center">{$data['comp']}</td>            
+                        </tr>
+                    </if>         
+                    </table>
+                  </div>
+
+               </div>
+             </div>
+        </div>
+    </div>
+    </div>
+     <!-- CONTENT-WRAPPER SECTION END-->
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                   Copyright &copy;2017 wwt All rights reserved</div>
+            </div>
+        </div>
+    </section>
+      <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="<?php echo hjs_url;?>jquery.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="<?php echo hjs_url;?>bootstrap.js"></script>
+      <!-- CUSTOM SCRIPTS  -->
+    <script src="<?php echo hjs_url;?>custom.js"></script>
+  
+</body>
+</html>
