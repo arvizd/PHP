@@ -1,0 +1,545 @@
+[ 2017-05-28T07:27:12+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014913s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0905s ]
+SQL: SELECT * FROM `b_cate` WHERE `pid` = 0 ORDER BY sort ASC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0876s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`time` FROM `b_blog` WHERE `cid` IN ('1') ORDER BY time DESC  [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`time` FROM `b_blog` WHERE `cid` IN ('2') ORDER BY time DESC  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`time` FROM `b_blog` WHERE `cid` IN ('8','19','20','9','3') ORDER BY time DESC  [ RunTime:0.0131s ]
+SQL: SELECT `id`,`title`,`time` FROM `b_blog` WHERE `cid` IN ('10','11','12','4') ORDER BY time DESC  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`time` FROM `b_blog` WHERE `cid` IN ('16','14','15','13','5') ORDER BY time DESC  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`time` FROM `b_blog` WHERE `cid` IN ('17','18','6') ORDER BY time DESC  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`time` FROM `b_blog` WHERE `cid` IN ('7') ORDER BY time DESC  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0009s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.295691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.295863s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012631s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012777s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005469s ]
+
+[ 2017-05-28T07:27:16+08:00 ] 127.0.0.1 /index.php/c_5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN ('16','14','15','13',5) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0022s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN ('16','14','15','13',5) LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0006s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030891s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030954s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000469s ]
+
+[ 2017-05-28T07:27:19+08:00 ] 127.0.0.1 /index.php/c_4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000694s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0022s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN ('10','11','12',4) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0023s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN ('10','11','12',4) LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009958s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000433s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000484s ]
+
+[ 2017-05-28T07:27:20+08:00 ] 127.0.0.1 /index.php/c_3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0022s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN ('8','19','20','9',3) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0019s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN ('8','19','20','9',3) LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011696s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011782s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000557s ]
+
+[ 2017-05-28T07:27:22+08:00 ] 127.0.0.1 /index.php/c_2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN (2) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0019s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN (2) LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011412s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011472s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000458s ]
+
+[ 2017-05-28T07:27:23+08:00 ] 127.0.0.1 /index.php/c_1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001455s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0594s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN (1) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0051s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN (1) LIMIT 0,15   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024392s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024508s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000672s ]
+
+[ 2017-05-28T07:27:24+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000264s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035471s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035547s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000415s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000461s ]
+
+[ 2017-05-28T07:27:26+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0278s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051473s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000544s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000600s ]
+
+[ 2017-05-28T07:27:27+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021775s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021860s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000543s ]
+
+[ 2017-05-28T07:27:28+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033635s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033712s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2017-05-28T07:27:32+08:00 ] 127.0.0.1 /index.php/c_2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001161s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN (2) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0024s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN (2) LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000416s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000464s ]
+
+[ 2017-05-28T07:27:33+08:00 ] 127.0.0.1 /index.php/c_3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0023s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN ('8','19','20','9',3) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0018s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN ('8','19','20','9',3) LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000557s ]
+
+[ 2017-05-28T07:27:34+08:00 ] 127.0.0.1 /index.php/c_4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN ('10','11','12',4) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.1278s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN ('10','11','12',4) LIMIT 0,15   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000252s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0009s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026358s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026490s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001039s ]
+
+[ 2017-05-28T07:27:35+08:00 ] 127.0.0.1 /index.php/c_5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0023s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN ('16','14','15','13',5) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0019s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN ('16','14','15','13',5) LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010880s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010938s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000551s ]
+
+[ 2017-05-28T07:27:36+08:00 ] 127.0.0.1 /index.php/c_6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN ('17','18',6) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0023s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN ('17','18',6) LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011028s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011085s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000405s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000452s ]
+
+[ 2017-05-28T07:27:37+08:00 ] 127.0.0.1 /index.php/c_7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN (7) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0020s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN (7) LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0639s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075826s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075930s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000964s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001080s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001954s ]
+
+[ 2017-05-28T07:27:44+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000999s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0603s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0009s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.098405s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.098526s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000903s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001403s ]
+
+[ 2017-05-28T07:27:50+08:00 ] 127.0.0.1 /index.php/c_3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN ('8','19','20','9',3) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0021s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN ('8','19','20','9',3) LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010982s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000854s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2017-05-28T07:27:52+08:00 ] 127.0.0.1 /index.php/c_2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0023s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_blog` WHERE `cid` IN (2) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0020s ]
+SQL: SELECT Blog.id AS id,Blog.title AS title,Blog.time AS time,Blog.click AS click,Blog.summary AS summary,Cate.name AS name FROM b_blog Blog LEFT JOIN b_cate Cate ON blog.cid=cate.id WHERE `cid` IN (2) LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011233s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011288s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000563s ]
+
+[ 2017-05-28T07:28:01+08:00 ] 127.0.0.1 /index.php/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001679s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0142s ]
+SQL: SELECT `id`,`title`,`time`,`content`,`cid` FROM `b_blog` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `b_cate` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort ASC  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+SQL: SELECT * FROM `b_cate` ORDER BY sort  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025751s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025828s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000867s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000541s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000593s ]
+
+[ 2017-05-28T07:28:01+08:00 ] 127.0.0.1 /index.php/Show/clickNum/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.0047s ]
+SQL: UPDATE `b_blog` SET `click`=click+1 WHERE `id` = 4 [ RunTime:0.1687s ]
+SQL: SELECT `click` FROM `b_blog` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001629s ]
+

@@ -1,0 +1,18 @@
+[ 2016-10-21T07:57:13+08:00 ] 127.0.0.1 /blog/index.php/Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.044961s ]
+ERR: 无法加载控制器:Admin
+
+[ 2016-10-21T07:57:21+08:00 ] 127.0.0.1 /blog/index.php/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+ERR: 无法加载控制器:Admin
+
+[ 2016-10-21T07:57:24+08:00 ] 127.0.0.1 /blog/index.php/Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+ERR: 无法加载控制器:Admin
+

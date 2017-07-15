@@ -1,0 +1,28 @@
+<!--
+<php>
+		include './framework/Category.class.php';
+        $cate=M('cate')->order('sort ASC')->select();
+        $cate=Category::unlimtedForLayer($cate);
+      // dump($cate);
+</php>
+
+	<div class='top-nav-wrap'>
+		<ul class='nav-lv1'>
+			<li class='nav-lv1-li'>
+				<a href="" class='top-cate'>博客首页</a>
+			</li>
+			<foreach name='cate' item='v'> 
+				<li class='nav-lv1-li'>
+					<a href="" class='top-cate'>{$v.name}</a>
+					<ul>
+						<if condition='$v["cate"]'>
+						<foreach name='v.cate' item='a'>
+						<li><a href="">{$a.name}</a></li>
+						</foreach>
+						</if>
+					</ul>
+				</li>
+			</foreach>
+		</ul>
+	</div>
+-->

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/Blogs/Home/Public/Css/common.css" />
+	<script type="text/JavaScript" src='/Blogs/Home/Public/Js/jquery-1.7.2.min.js'></script>
+	<script type="text/JavaScript" src='/Blogs/Home/Public/Js/common.js'></script>
+<link rel="stylesheet" href="/Blogs/Home/Public/Css/show.css" />
+</head>
+<body>
+<!--头部-->
+	<div class='top-list-wrap'>
+		<div class='top-list'>
+			<ul class='l-list'>
+				<li><a href="http://www.houdunwang.com" target='_blank'>后盾网</a></li>
+				<li><a href="http://bbs.houdunwang.com" target='_blank'>后盾网论坛</a></li>
+				<li><a href="http://study.houdunwang.com" target='_blank'>后盾学习社区</a></li>
+			</ul>
+			<ul class='r-list'>
+				<li><a href="http://www.hdphp.com" target='_blank'>HDPHP框架</a></li>
+				<li><a href="http://bbs.houdunwang.com" target='_blank'>免费视频教程</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='top-search-wrap'>
+		<div class='top-search'>
+			<a href="http://bbs.houdunwang.com" target='_blank' class='logo'>
+				<img src="/Blogs/Home/Public/images/logo.png"/>
+			</a>
+			<div class='search-wrap'>
+				<form action="" method='get'>
+					<input type="text" name='keyword' class='search-content'/>
+					<input type="submit" name='search' value='搜索'/>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+<div class='top-nav-wrap'>
+		<ul class='nav-lv1'>
+			<li class='nav-lv1-li'>
+				<a href="/index.php/Index/index.html" class='top-cate'>博客首页</a>
+			</li>
+					<li class='nav-lv1-li'>
+					<a href="/index.php/c_1.html" class='top-cate'>HTML</a>
+					<ul>
+											</ul>
+				</li><li class='nav-lv1-li'>
+					<a href="/index.php/c_2.html" class='top-cate'>DIV+CSS</a>
+					<ul>
+											</ul>
+				</li><li class='nav-lv1-li'>
+					<a href="/index.php/c_3.html" class='top-cate'>JavaScript</a>
+					<ul>
+						<li><a href="/index.php/c_8.html">jQuery</a></li><li><a href="/index.php/c_9.html">Ajax</a></li>					</ul>
+				</li><li class='nav-lv1-li'>
+					<a href="/index.php/c_4.html" class='top-cate'>PHP</a>
+					<ul>
+						<li><a href="/index.php/c_10.html">字符串</a></li><li><a href="/index.php/c_11.html">数组</a></li><li><a href="/index.php/c_12.html">对象</a></li>					</ul>
+				</li><li class='nav-lv1-li'>
+					<a href="/index.php/c_5.html" class='top-cate'>MySQL</a>
+					<ul>
+						<li><a href="/index.php/c_16.html">存储过程</a></li><li><a href="/index.php/c_14.html">事务</a></li><li><a href="/index.php/c_15.html">视图</a></li><li><a href="/index.php/c_13.html">存储引擎</a></li>					</ul>
+				</li><li class='nav-lv1-li'>
+					<a href="/index.php/c_6.html" class='top-cate'>Linux</a>
+					<ul>
+						<li><a href="/index.php/c_17.html">基本命令</a></li><li><a href="/index.php/c_18.html">网络配置</a></li>					</ul>
+				</li><li class='nav-lv1-li'>
+					<a href="/index.php/c_7.html" class='top-cate'>其他</a>
+					<ul>
+											</ul>
+				</li>		</ul>
+	</div>
+<!--主体-->
+	<div class='main'>
+		<div class='main-left'>
+			<div class='location'>
+				<a href="">首页</a>>
+								<a href="/index.php/c_1.html">HTML</a>			</div>
+			<div class="title">
+				<p>ThinkPHP3.1转移ThinkPHP3.2心得</p>
+				<div>
+					<span class='fl'>发布于：2016年10月05日</span>
+					<span class='fr'>已被阅读<script type="text/javascript" src="/index.php/Show/clickNum/id/10.html"></script>次</span>
+				</div>
+			</div>
+			<div class='content'>
+				<p>下面说说一些比较容易犯错的地方：<br/><br/>一、ThinkPHP3.2里面用F方法储存的数据都被序列化了。假设你用F方法把数据储存到配置文件，储存后的数据都是序列化之后的，这样你就不能像3.1那样用C方法读取配置文件的数据了。我们可以自己定义一个储存数据的方法解决之。在/Application/Common/Common创建function.PHP，然后添加以下代码：<br/><br/><br/>01<br/>&lt;?php<br/>02<br/>/**<br/>03<br/>&nbsp;* [writeArr 写入配置文件方法]<br/>04<br/>&nbsp;* @param&nbsp; [type] $arr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [要写入的数据]<br/>05<br/>&nbsp;* @param&nbsp; [type] $filename [文件路径]<br/>06<br/>&nbsp;* @return [type]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [description]<br/>07<br/>&nbsp;*/<br/>08<br/>function writeArr($arr, $filename) {<br/>09<br/>&nbsp;&nbsp;&nbsp; return file_put_contents($filename, &quot;&lt;?php\r\nreturn &quot; . var_export($arr, true) . &quot;;&quot;);<br/>10<br/>}<br/>然后可以用这个writeArr方法来写入配置<br/>调用方法：<br/><br/>view sourceprint?<br/>1<br/>// 写入配置文件<br/>2<br/>&nbsp;&nbsp;&nbsp; public function setConfig(){<br/>3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $file = CONF_PATH.&#39;/setConfig.php&#39;;<br/>4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(writeArr($_POST,$file)){<br/>5<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;success(&#39;修改成功&#39;);<br/>6<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }else{<br/>7<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;error(&#39;修改失败&#39;);<br/>8<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br/>9<br/>&nbsp;&nbsp;&nbsp; }<br/>二、ThinkPHP3.2加载外部标签库出现“实例化一个不存在的类”错误<br/><br/>例如：<br/><br/>&#39;APP_AUTOLOAD_PATH&#39; =&gt; &#39;@.TagLib&#39;,<br/>&#39;TAGLIB_BUILD_IN&#39; =&gt; &#39;Cx,Hd&#39;,<br/><br/>改成，并放在对应模块的config.php里面，不要放在公共配置的config.php里面<br/><br/>&#39;TAGLIB_BUILD_IN&#39;<br/>=&gt; &#39;Cx,Home\TagLib\TagLibHd&#39;,<br/>&nbsp;&nbsp;&nbsp; &#39;TAGLIB_PRE_LOAD&#39;<br/>=&gt; &#39;Home\TagLib\TagLibHd&#39;,<br/><br/><br/>三、ThinkPHP3.2下import导入自定义类的问题<br/><br/>首先检查下命名空间有没有出错，然后还要做以下改动：<br/><br/>在import(&#39;Class.Image&#39;,APP_PATH)之后，实例化时，应该这样：<br/><br/>$Image = new \Image();<br/><br/>而不是<br/><br/>$Image = new Image();<br/><br/>&nbsp; 因为这样的话会直接作为一个当前命名空间下的类使用，所以会报找不到类的错。<br/><br/><br/><br/>四、自定义标签库错误，parseXmlAttr()错误<br/><br/>3.2版本已经作废了该方法，所以要获取属性值，直接就可以通过$attr（属性数组） 变量来获得，<br/><br/>也就是释掉以下即可正常加载标签：</p>			</div>
+		</div>
+	<!--主体右侧-->
+		<div class='main-right'>
+		
+		<dl>
+
+				<dt>热门博文</dt>
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+			</dl>
+
+			<dl>
+				<dt>最发布发</dt>
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+				<dd>
+					<a href="">对象的产生与生命周期</a>
+					<span>(1024)</span>
+				</dd>
+			</dl>
+
+			<dl>
+				<dt>友情连接</dt>
+				<dd>
+					<a href="">后盾网</a>
+				</dd>
+
+				<dd>
+					<a href="">后盾网论坛</a>
+				</dd>
+				<dd>
+					<a href="">后盾网学习社区</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+<!--底部-->
+	<div class='bottom'>
+		<div></div>
+	</div>
+</body>
+</html>

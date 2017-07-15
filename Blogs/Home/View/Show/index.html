@@ -1,0 +1,27 @@
+<include file='Common:header'/>
+<link rel="stylesheet" href="<?php echo hcss_url;?>show.css" />
+<include file='Common:nav'/>
+<!--主体-->
+	<div class='main'>
+		<div class='main-left'>
+			<div class='location'>
+				<a href="">首页</a>>
+				<php>$count=count($parent)-1;</php>
+				<foreach name='parent' item='v'>
+				<a href="{:U('/c_'.$v['id'])}">{$v.name}</a><if condition='$key neq $count'>></if>
+				</foreach>
+			</div>
+			<div class="title">
+				<p>{$blog.title}</p>
+				<div>
+					<span class='fl'>发布于：{$blog.time|date='Y年m月d日',###}</span>
+					<span class='fr'>已被阅读<script type="text/javascript" src="{:U('Home/Show/clickNum',array('id'=>$blog['id']))}"></script>次</span>
+				</div>
+			</div>
+			<div class='content'>
+				{$blog.content}
+			</div>
+		</div>
+	<include file='Common:right'/>
+	</div>
+<include file='Common:bottom'/>

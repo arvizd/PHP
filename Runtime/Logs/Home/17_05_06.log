@@ -1,0 +1,14 @@
+[ 2017-05-06T12:11:01+08:00 ] 127.0.0.1 /index.php/Show/clickNum/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `b_blog` [ RunTime:0.1172s ]
+SQL: UPDATE `b_blog` SET `click`=click+1 WHERE `id` = 10 [ RunTime:0.0606s ]
+SQL: SELECT `click` FROM `b_blog` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.017472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017635s ]
+
